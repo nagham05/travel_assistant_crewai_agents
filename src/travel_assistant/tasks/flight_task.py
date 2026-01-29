@@ -1,5 +1,5 @@
 from crewai import Task
-from agents.flight_agent import flight_agent
+from travel_assistant.agents.flight_agent import flight_agent
 
 flight_task = Task(
     name="Flight Task",

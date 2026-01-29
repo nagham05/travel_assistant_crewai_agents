@@ -3,7 +3,8 @@ from crewai.project import CrewBase, agent, crew, task
 from typing import List
 from travel_assistant.agents.flight_agent import flight_agent
 from travel_assistant.tasks.flight_task import flight_task
-
+from travel_assistant.agents.hotels_agent import hotels_agent
+from travel_assistant.tasks.hotels_task import hotels_task
 
 @CrewBase
 class TravelAssistant:
@@ -29,11 +30,18 @@ class TravelAssistant:
 
     - Use direct references (flight_agent) for Python-defined ones 
     """
+    @agent
+    def hotels_agent(self) -> Agent:
+        return hotels_agent
     
     
     @task
     def flight_task(self) -> Task:
         return flight_task
+    
+    @task
+    def hotels_task(self) -> Task:
+        return hotels_task
     
     @crew
     def crew(self) -> Crew:
