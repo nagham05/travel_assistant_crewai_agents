@@ -7,6 +7,10 @@ from travel_assistant.agents.hotels_agent import hotels_agent
 from travel_assistant.tasks.hotels_task import hotels_task
 from travel_assistant.agents.tours_agent import tours_agent
 from travel_assistant.tasks.tours_task import tours_task
+from travel_assistant.agents.advice_agent import advice_agent
+from travel_assistant.tasks.advice_task import advice_task
+
+
 @CrewBase
 class TravelAssistant:
     """Travel Assistant crew"""
@@ -39,6 +43,11 @@ class TravelAssistant:
     def tours_agent(self) -> Agent:
         return tours_agent
     
+    @agent
+    def advice_agent(self) -> Agent:
+        return advice_agent
+    
+    
     @task
     def flight_task(self) -> Task:
         return flight_task
@@ -51,7 +60,11 @@ class TravelAssistant:
     def tours_task(self) -> Task:
         return tours_task
     
+    @task
+    def advice_task(self) -> Task:
+        return advice_task
     
+
     @crew
     def crew(self) -> Crew:
         """Creates the TravelAssistant crew"""
