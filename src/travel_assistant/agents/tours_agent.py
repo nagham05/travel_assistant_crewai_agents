@@ -1,4 +1,4 @@
-from crewai.agent import Agent
+from crewai import Agent
 
 tours_agent = Agent(
     role="Travel Itinerary Planner",
