@@ -1,8 +1,7 @@
-from crewai.task import Task
+from crewai import Task
 from travel_assistant.agents.hotels_agent import hotels_agent
 
 hotels_task = Task(
-    name="Hotels Task",
     description=
         "Suggest 3 to 5 hotels in {destination}. "
         "For each hotel include:\n"

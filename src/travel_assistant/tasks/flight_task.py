@@ -2,7 +2,6 @@ from crewai import Task
 from travel_assistant.agents.flight_agent import flight_agent
 
 flight_task = Task(
-    name="Flight Task",
     description="Get available flights for the user's requested destination.",
     agent=flight_agent,
     input_schema={
