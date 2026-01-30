@@ -5,7 +5,8 @@ from travel_assistant.agents.flight_agent import flight_agent
 from travel_assistant.tasks.flight_task import flight_task
 from travel_assistant.agents.hotels_agent import hotels_agent
 from travel_assistant.tasks.hotels_task import hotels_task
-
+from travel_assistant.agents.tours_agent import tours_agent
+from travel_assistant.tasks.tours_task import tours_task
 @CrewBase
 class TravelAssistant:
     """Travel Assistant crew"""
@@ -34,6 +35,9 @@ class TravelAssistant:
     def hotels_agent(self) -> Agent:
         return hotels_agent
     
+    @agent
+    def tours_agent(self) -> Agent:
+        return tours_agent
     
     @task
     def flight_task(self) -> Task:
@@ -42,6 +46,11 @@ class TravelAssistant:
     @task
     def hotels_task(self) -> Task:
         return hotels_task
+
+    @task
+    def tours_task(self) -> Task:
+        return tours_task
+    
     
     @crew
     def crew(self) -> Crew:
